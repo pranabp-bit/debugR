@@ -1,18 +1,30 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.pranabpbit.debugr</id>
-    <name>debugR Template</name>
+    <name>debugR</name>
     <vendor>pranabp-bit</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.xdebugger</depends>
+    <depends>org.jetbrains.java.decompiler</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+<!--    <resource-bundle>messages.MyBundle</resource-bundle>-->
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.pranabpbit.debugr.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
+<!--    <extensions defaultExtensionNs="com.intellij">-->
+<!--        <toolWindow factoryClass="com.github.pranabpbit.debugr.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>-->
+<!--    </extensions>-->
 
-    <applicationListeners>
-        <listener class="com.github.pranabpbit.debugr.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
-    </applicationListeners>
+<!--    <applicationListeners>-->
+<!--&lt;!&ndash;        <listener class="com.github.pranabpbit.debugr.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>&ndash;&gt;-->
+<!--    </applicationListeners>-->
+    <projectListeners>
+        <listener class="com.github.pranabpbit.debugr.listeners.DebuggerListener"
+                  topic="com.intellij.xdebugger.XDebuggerManagerListener">
+        </listener>
+        <listener class="com.github.pranabpbit.debugr.listeners.BreakpointListener"
+                  topic="com.intellij.xdebugger.breakpoints.XBreakpointListener" />
+        <listener class="com.github.pranabpbit.debugr.listeners.DebuggerActionListener"
+                  topic="com.intellij.openapi.actionSystem.ex.AnActionListener" />
+    </projectListeners>
 </idea-plugin>
