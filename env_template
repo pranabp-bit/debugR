@@ -1,0 +1,5 @@
+CONNECTION_STRING=mongodb+srv://anyuser:anyuser@cluster0.w95f5mz.mongodb.net/?retryWrites=true&w=majority
+PROJECT_LOCATION=/home/pranab/Downloads/hello_monitor
+USERNAME=Pranabg
+SUBJECT=test
+DEBUGGER_TYPE=Generic

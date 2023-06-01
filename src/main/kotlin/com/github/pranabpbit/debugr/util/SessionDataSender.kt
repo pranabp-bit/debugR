@@ -5,6 +5,7 @@ import com.mongodb.client.MongoDatabase
 import org.bson.Document
 import org.bson.types.ObjectId
 import com.github.pranabpbit.debugr.listeners.SessionData
+import com.github.pranabpbit.debugr.starters.userId
 
 class SessionDataSender(database: MongoDatabase) {
     private val collection: MongoCollection<Document> = database.getCollection("Sessions")
@@ -25,7 +26,7 @@ class SessionDataSender(database: MongoDatabase) {
     private fun createSessionDocument(sessionData: SessionData): Document {
         val document = Document()
         document.append("_id", ObjectId()) // Generate a unique ObjectId for the _id field
-        document.append("user_id", 0) // Dummy value for user ID
+        document.append("user_id", userId) // Dummy value for user ID
         document.append("start_time", sessionData.startTime)
         document.append("end_time", sessionData.endTime)
         return document

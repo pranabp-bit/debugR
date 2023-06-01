@@ -18,6 +18,14 @@
 <!--    <applicationListeners>-->
 <!--&lt;!&ndash;        <listener class="com.github.pranabpbit.debugr.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>&ndash;&gt;-->
 <!--    </applicationListeners>-->
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.github.pranabpbit.debugr.starters.ProjectOpener" />
+    </extensions>
+
+    <applicationListeners>
+    <listener class="com.github.pranabpbit.debugr.starters.PreProjectOpener"
+              topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+    </applicationListeners>
     <projectListeners>
         <listener class="com.github.pranabpbit.debugr.listeners.DebuggerListener"
                   topic="com.intellij.xdebugger.XDebuggerManagerListener">

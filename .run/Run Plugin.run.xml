@@ -2,6 +2,15 @@
   <configuration default="false" name="Run Plugin" type="GradleRunConfiguration" factoryName="Gradle">
     <log_file alias="idea.log" path="$PROJECT_DIR$/build/idea-sandbox/system/log/idea.log" />
     <ExternalSystemSettings>
+      <option name="env">
+        <map>
+          <entry key="CONNECTION_STRING" value="mongodb+srv://anyuser:anyuser@cluster0.w95f5mz.mongodb.net/?retryWrites=true&amp;w=majority" />
+          <entry key="DEBUGGER_TYPE" value="Generic" />
+          <entry key="PROJECT_LOCATION" value="$PROJECT_DIR$/../hello_monitor" />
+          <entry key="SUBJECT" value="test" />
+          <entry key="USERNAME" value="Pranabg" />
+        </map>
+      </option>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$" />
       <option name="externalSystemIdString" value="GRADLE" />
@@ -19,6 +28,7 @@
     <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
     <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
     <DebugAllEnabled>false</DebugAllEnabled>
+    <ForceTestExec>false</ForceTestExec>
     <method v="2" />
   </configuration>
 </component>
